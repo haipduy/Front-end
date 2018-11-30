@@ -1,0 +1,266 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>SPEEDMASTER</title>
+<style>
+* { margin:0;
+	padding:0;
+}
+.main { width:100%; height:auto; float:left;}
+/*-----------STAR: TOP-----------*/
+.top { width:100%; height: 55px; float:left; }
+	.top_left { width:40%; height:50px; float:left;}
+	.top_left_sp{ margin-top:20px;}
+		.sp-menu { padding-top:20px; padding-left:20px; box-sizing:border-box; font-family:"Comic Sans MS", cursive;}
+		.sp-menu a { color:#000; text-decoration:none; box-sizing:border-box;}
+		.sp-menu a:hover { color:#C00;}
+		
+	.top_center{ width:50%; height:50px; float:left;  text-align:left;}
+		.logo { width:13%; height:40px; margin-left:12%; margin-top:8px;}
+	.top_right { width:10%; height:60px; float:left;}
+		.kinhlup { width:25px; height:25px; padding-left:30px; padding-right:15px;}
+		.kinhlup:hover { color:#F00;}
+		.car { width:35px; height:35px; margin-top:10px;}
+/*-----------STAR: menu-speeadmaster----------*/
+.speedmaster { width:100%; height:auto; background-color:#FFF; margin-bottom:20px; float:left;}
+.spm1 { width:100%; height:455px;float:left; }
+	.l-s-m { width:100%; height:450px;}
+.footer{ width:100%; height:300px; background-color:#FAFAFA; float:left; }
+	.f1 { width:11.6%; height:80px; margin-left:44.2%; margin-bottom:10px; float:left;margin-top:10px; box-sizing:border-box;}
+		.f11 { margin:auto;}
+	.icons { width:24%; height:50px; float:left; margin-left:38.6%;}
+		.footer_image { width:40px; height:40px;}
+	
+	.f3 { width:100%; height:100px; float:left; text-align:center; margin-top:3%;}
+	#ome{ letter-spacing:0.15cm;}
+	#omeg { font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;}
+	#omega a{ font-family:"Times New Roman", Times, serif; text-decoration:none; color:#000;}
+	#omega a:hover { color:#F00;}
+</style>
+<style>
+#menu { width:100%; height:10px; float:left; text-align:center;  margin-top:5%; box-sizing:border-box;}
+#main { width:90%; height:auto; float:left; background:#FFF; margin-left:5%;  box-sizing:border-box;}
+.ngoai { width:25%	; height:570px; float:left;}
+	.trong { width:100%; height:530px;}
+	.trong img { width:100%; height:420px; float:left;}
+	.trong p{ width:100%; height:50px; float:left; text-align:center;
+			font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; font-size:18px}
+	.trong p1 { width:100%; height:30px; float:left; text-align:center;
+						background-color: #4CAF50;
+						border: none;
+						color: #F00;
+						padding: 15px 32px;
+						text-align: center;
+						text-decoration: none;
+						display: inline-block;
+						font-size: 16px;
+						margin: 4px 2px;
+						cursor: pointer;}
+	.trong p2 { width:100%; height:30px; float:left; text-align:center;color:#F00; text-align:left; 
+			margin-left:20%; }
+
+</style>
+<script>
+// JavaScript Document
+var arr=[
+			{
+				ten:"OMEGA CO-AXIAL CHRONOMETER MOONPHASE 44.25 MM",
+				hinh:"im-spm/moonwatch/dh1.png",
+				gia:"55",
+			},
+			{
+				ten:"OMEGA CO-AXIAL CHRONOGRAPH 44.25 MM",
+				hinh:"im-spm/moonwatch/dh2.png",
+				gia:"89",
+
+			},
+			{
+				ten:"PROFESSIONAL CHRONOGRAPH 42 MM",
+				hinh:"im-spm/moonwatch/dh3.png",
+				gia:"69",
+			},
+			{
+				ten:"CHRONOGRAPH 39.7 MM",
+				hinh:"im-spm/moonwatch/dh4.png",
+				gia:"211",
+			},
+			{
+				ten:"ANNIVERSARY LIMITED SERIES",
+				hinh:"im-spm/speedmaster38/dh1.png",
+				gia:"51",
+			},
+			{
+				ten:"PROFESSIONAL MOONPHASE CHRONOGRAPH 44.25 MM",
+				hinh:"im-spm/speedmaster38/dh2.png",
+				gia:"100",
+
+			},
+			{
+				ten:"CO-AXIAL CHRONOGRAPH 42.4 X 46.2 MM",
+				hinh:"im-spm/speedmaster38/dh3.png",
+				gia:"130",
+			},
+			{
+				ten:"CO-AXIAL CHRONOGRAPH 40 MM",
+				hinh:"im-spm/speedmaster38/dh4.png",
+				gia:"170",
+			}
+		];
+function loadData()
+{
+	var div_main=document.getElementById("main");
+	for (var i=0;i<arr.length;i++)
+	{
+		var div_n=document.createElement("div");
+		var div_t=document.createElement("div");
+		
+		div_n.className="ngoai";
+		div_t.className="trong";
+		
+		
+		var anh=document.createElement("img");	
+		anh.src=arr[i].hinh;
+		var tag_p=document.createElement("p");
+		tag_p.innerHTML=arr[i].ten
+		var tag_p2=document.createElement("p2");
+		tag_p2.innerHTML=arr[i].gia+"$";
+		var tag_p1=document.createElement("p1");
+		tag_p1.innerHTML="<input type='button' value='Add to cart' onclick='them("+i+")'>";
+		
+		
+		//dat anh va p vao trong div_t lam con
+		div_t.appendChild(anh);
+		div_t.appendChild(tag_p);
+		div_t.appendChild(tag_p2);
+		div_t.appendChild(tag_p1);
+	
+		div_n.appendChild(div_t);
+		div_main.appendChild(div_n);
+	}
+	
+}
+
+//ham nay de khoi tao bien count=0 trong localStorage
+function khoitao()
+{
+	//kiem tra kho
+	var c=window.localStorage.getItem("count");
+	if(c==null)
+	{
+		window.localStorage.setItem("count",0);
+	}
+}
+//ham tim dua vao ma
+function tim(tencantim)
+{
+	var c=window.localStorage.getItem("count");
+	if(c!=null)
+	{
+		for(var i=1;i<=c;i++)
+		{
+			var v=window.localStorage.getItem(i);
+			if(v!=null)
+			{
+				var tam=v.split(",");
+				if(tam[0]==tencantim)
+					return i;
+			}
+		}
+	}
+	return -1;
+}
+//ham nay de them sp vao kho
+function them(i)
+{	
+	var kq=tim(arr[i].ten);
+	if(kq==-1)//k thay sp nay
+
+	{
+		var c=window.localStorage.getItem("count");
+		c++;
+		window.localStorage.setItem(c,arr[i].ten+","+arr[i].hinh+","+arr[i].gia+","+1);
+		window.localStorage.setItem("count",c);
+
+	}
+	else //timthay
+	{
+		var v=window.localStorage.getItem(kq);
+		if(v!=null)
+		{
+			var tam=v.split(",");	
+			tam[3]=parseInt(tam[3])+1;
+			//cap nhat tam vao kho
+			window.localStorage.setItem(kq,tam[0]+","+tam[1]+","+tam[2]+","+tam[3]);
+		}
+	}
+}
+</script>
+</head>
+
+<body onload="loadData()">
+<div class="ktop"></div>
+<div class="main">
+	<div class="top">
+    	<div class="top_left">
+        	<div class="top_left_sp">
+                <span class="sp-menu"><a href="hertime.html">HER TIME</a></span>
+            </div>
+        </div>
+        
+       	<div class="top_center">         	
+            <a href="index.html"><img src="IMAGE/top/logo.png" alt="OMEGA" class="logo"  /></a>
+        </div>
+        
+        <div class="top_right">
+        	
+	        <span><a href="search.html"><img src="IMAGE/icon/search.png"  class="kinhlup"/></a></span>
+            <span><a href="car1.html"><img src="IMAGE/icon/car.png" class="car"  /></a></span>
+            
+        </div>
+        
+    </div>
+ <!-- speedmaster--->
+    <div class="speedmaster">
+        <div class="spm1">
+            <img src="IMAGE/menu/collection/speedmaster/background.PNG"  class="spm1-lg"/>
+        </div>
+
+        	<div id="menu"></div>
+
+            <div id="main">
+            
+            </div>
+                    
+
+    	
+    </div>
+    
+    
+ <!-- search--->
+    <div class="footer">
+    	<div class="f1"><a href="index.html"><img src="IMAGE/footer/logo.png" id="f11" /></a>
+        </div>
+        <div class="icons">
+        	<a href="https://www.twitter.com" target="_blank"> <img src="IMAGE/icon/twitter.png"  class="footer_image"/></a>
+            <a href="https://www.skype.com" target="_blank"> <img src="IMAGE/icon/skype.png" class="footer_image"/></a>
+           	<a href="https://www.vimeo.com" target="_blank"> <img src="IMAGE/icon/vimeo.png" class="footer_image"/></a>
+			<a href="https://www.facebook.com" target="_blank"> <img src="IMAGE/icon/facebook.png" class="footer_image"/></a>
+            <a href="https://www.linkedin.com" target="_blank"> <img src="IMAGE/icon/linkedin.png" class="footer_image"/></a>
+            <a href="https://www.youtube.com" target="_blank"> <img src="IMAGE/icon/youtube.png" class="footer_image"/></a>
+            <a href="https://www.Instagram.com" target="_blank"> <img src="IMAGE/icon/Instagram.png" class="footer_image"/></a> 
+        </div>
+        <div class="f3">
+        	<span id="ome">&copy OMEGA 2017</span>
+            <br />
+            <span id="omeg">Made with love for great people.</span>
+            <br />
+            <span id="omega"><a href="#">PDH</a></span>
+        </div>
+    
+    </div>
+</div>
+
+</body>
+</html>
+

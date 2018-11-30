@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style>
+* { margin:0;
+
+<style>
+
+#ketqua { width:90%; height:auto; float:left; background:#FFF; margin-left:5%;  box-sizing:border-box;}	
+.ngoai { width:25%	; height:570px; float:left;}
+	.trong { width:100%; height:530px;}
+	.trong img { width:100%; height:420px; float:left;}
+	.trong p{ width:100%; height:50px; float:left; text-align:center;
+			font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; font-size:18px}
+</style>
+<script>
+function demo3(x)
+{
+	if(event.keyCode>=48 && event.keyCode<=57)
+	{
+		alert("nhap ten sp de tim");
+		x.style.backgroundColor='red';
+		x.focus();
+	}
+	else if(event.keyCode==13)
+	{
+		var kq=findout(x.value);
+		if(kq.length>0)
+		{
+			var div_kq=document.getElementById("ketqua");
+			for(var i=0;i<kq.length;i++)
+			{
+			var anh=document.createElement("img");	
+			var tag_p=document.createElement("p");
+			var div_n=document.createElement("div");
+			var div_t=document.createElement("div");
+			
+				//s=s+"<br>ma:" + kq[i].hinh;
+				//s=s+"<br>ten:" + kq[i].ten;
+				anh.src=kq[i].hinh;
+				tag_p.innerHTML=kq[i].ten;
+				div_n.className="ngoai";
+				div_t.className="trong";
+				
+				
+			
+				div_t.appendChild(anh);
+				div_t.appendChild(tag_p);	
+				div_n.appendChild(div_t);
+				div_kq.appendChild(div_n);
+				
+			}
+				
+				
+			//div.innerHTML=s;
+		
+		}
+		else
+		  alert("ko thay");
+	}
+}
+
+var arr=[
+		{
+			ten:"OMEGA CO-AXIAL MASTER CHRONOMETER GMT 45.5 MM",
+			hinh:"im-spm/moonwatch/dh1.png",
+		},
+		{
+			ten:"OMEGA CO-AXIAL MASTER CHRONOMETER CHRONOGRAPH 45.5 MM",
+				hinh:"im-spm/moonwatch/dh2.png",
+		},
+		{
+			ten:"OMEGA CO-AXIAL MASTER CHRONOMETER 43.5 MM",
+				hinh:"im-spm/moonwatch/dh3.png",
+		},
+		{
+			ten:"OMEGA CO-AXIAL MASTER CHRONOMETER GMT 43.5 MM",
+				hinh:"im-spm/moonwatch/dh4.png",
+
+		},
+		{
+			ten:"OMEGA MASTER CO-AXIAL GMT 43 MM",
+				hinh:"im-spm/speedmaster38/dh1.png",
+		}		
+	    ];
+function findout(key)
+{
+	var kq=new Array(0);
+	for(var i=0;i<arr.length;i++)
+	  {
+		  if(arr[i].ten.match(key)!=null)
+		     kq.push(arr[i]);
+	  }
+	return kq;  
+}
+</script>
+</head>
+
+<body>
+
+<div class="main"></div>
+ <!-- search--->
+    <div class="top-search">
+         <input type="text" onkeypress="demo3(this)" />
+         <div id="ketqua">
+         </div>
+    </div>
+    
+    
+
+</div>
+
+</body>
+</html>
+

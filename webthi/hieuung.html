@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style>
+.div1 { width: 100%; height:1000px; border:#03F;}
+.div_ng { width:100%; height:20px; border:1px solid black;}
+	.div_tr1{ width:10px;  height:10px; border-radius:100%; border:1px solid blue; float:left; margin-left:48%; background-color:black;}
+	.div_tr2{ width:10px;  height:10px; border-radius:100%; border:1px solid blue; float:left; margin-left:2%;}
+	.div_tr3{ width:10px;  height:10px; border-radius:100%; border:1px solid blue; float:left; margin-left:2%;}
+
+</style>
+<script>
+var img=0;
+var arrimg=new Array(10);
+
+arrimg[0]="IMAGE/1.jpg";
+arrimg[1]="IMAGE/2.jpg";
+arrimg[2]="IMAGE/3.jpg";
+
+function change(x){
+var show=document.getElementById("hinh");
+show.src=arrimg[x];
+for(i=0;i<3;i++)
+{
+	var get=document.getElementById(i);
+	get.style.backgroundColor="white";
+	if(i==x) get.style.backgroundColor="black";
+	}
+}
+</script>
+</head>
+
+<body>
+<div class="div1" id="show"><img id="hinh" src="IMAGE/1.jpg"/></div>
+<div class="div_ng">
+	<div class="div_tr1" id="0" onclick="change('0')"></div>
+    <div class="div_tr2" id="1" onclick="change('1')"></div>
+    <div class="div_tr3" id="2" onclick="change('2')"></div>
+</div>
+
+
+</body>
+</html>
